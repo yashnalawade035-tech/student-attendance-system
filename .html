@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Student Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1><i class="fas fa-graduation-cap"></i> Student Management System</h1>
+        <div class="stats-bar">
+            <div class="stat-card">Total Students: <span id="totalCount">0</span></div>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="text" id="roll" placeholder="Roll Number">
+            <input type="text" id="course" placeholder="Course">
+            <button id="submitBtn" onclick="handleFormSubmit()">Add Student</button>
+        </div>
+        
+        <div class="search-group">
+            <input type="text" id="searchInput" onkeyup="searchStudents()" placeholder="Search by Name or Roll No...">
+            <button class="export-btn" onclick="exportToCSV()"><i class="fas fa-file-export"></i> Export CSV</button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Course</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
